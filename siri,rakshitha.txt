@@ -1,0 +1,92 @@
+SQL> create table emp4(eno number(2), name varchar(13);
+
+
+
+
+SQL> desc emp4;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ ENO                                                NUMBER(8)
+ NAME                                               VARCHAR2(13)
+
+
+SQL> Alter table emp4 ADD sal numeric(1,4) NOT NULL;
+
+Table altered.
+
+SQL> desc emp4;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ ENO                                                NUMBER(8)
+ NAME                                               VARCHAR2(13)
+ SAL                                       NOT NULL NUMBER(1,4)
+
+SQL> Alter table emp4 DROP COLUMN sal;
+
+Table altered.
+
+SQL> desc emp4;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ ENO                                                NUMBER(8)
+ NAME                                               VARCHAR2(13)
+
+
+                         
+
+
+SQL> Alter table emp4  MODIFY name VARCHAR2(13);
+
+Table altered.
+
+SQL> desc emp4;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ ENO                                                NUMBER(8)
+ NAME                                               VARCHAR2(13)
+
+
+
+
+SQL> Insert into emp4(eno,name) values (201,'siri');
+
+1 row created.
+
+SQL> select * from emp4;
+
+       ENO NAME
+---------- -------------
+       201 siri
+
+SQL> Insert into emp4(eno,name) values (103,'rakshitha');
+
+1 row created.
+
+SQL> select * from emp4;
+
+       ENO NAME
+---------- -------------
+       201 siri
+       103 rakshitha
+
+SQL> Truncate table emp4;
+
+Table truncated.
+
+SQL> select * from emp4;
+
+no rows selected
+
+SQL> DROP table emp4;
+
+Table dropped.
+
+SQL> ALERT table emp4 ADD sal numeric(2,4) NOT NULL;
+
+
+
+
+
+
+
+

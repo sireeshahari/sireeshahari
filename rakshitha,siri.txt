@@ -1,0 +1,262 @@
+
+
+
+SQL> create table emp2(empno numeric(3), ename varchar2(18) NOT NULL, job varchar2(16) NOT NULL, deptno numeric(9), sal numeric(3,7));
+
+Table created.
+
+SQL> Alter table emp2 ADD experience numeric(3);
+
+Table altered.
+
+SQL> desc emp2;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ EMPNO                                              NUMBER(3)
+ ENAME                                     NOT NULL VARCHAR2(18)
+ JOB                                       NOT NULL VARCHAR2(16)
+ DEPTNO                                             NUMBER(9)
+ SAL                                                NUMBER(3,7)
+ EXPERIENCE                                         NUMBER(3)
+
+SQL> create table dept (deptno numeric(3) NOT NULL, dname varchar2(10) NOT NULL, loc varchar2(10) NOT NULL, PRIMARY KEY(deptno));
+
+Table created.
+
+SQL> desc emp2;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ EMPNO                                              NUMBER(3)
+ ENAME                                     NOT NULL VARCHAR2(18)
+ JOB                                       NOT NULL VARCHAR2(16)
+ DEPTNO                                             NUMBER(9)
+ SAL                                                NUMBER(3,7)
+ EXPERIENCE                                         NUMBER(3)
+
+SQL> desc dept;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ DEPTNO                                    NOT NULL NUMBER(3)
+ DNAME                                     NOT NULL VARCHAR2(10)
+ LOC                                       NOT NULL VARCHAR2(10)
+
+
+
+
+SQL> CREATE table (empno numeric(3) CHECK (empno>100), ename varchar2(25));
+CREATE table (empno numeric(3) CHECK (empno>100), ename varchar2(25))
+             *
+ERROR at line 1:
+ORA-00903: invalid table name
+
+
+
+SQL> CREATE table emp1 (empno numeric(3) CHECK (empno>100), ename varchar2(25));
+
+Table created.
+
+SQL> insert into emp1 (empno, ename) values (101, 'rakshitha');
+
+1 row created.
+
+
+  2
+SQL> insert into emp1 (empno, ename) values (101, 'siri');
+
+1 row created.
+
+SQL> select * from emp1;
+
+     EMPNO ENAME
+---------- -------------------------
+       101 rakshitha
+       101 siri
+
+
+
+SQL>  Create table emp6 (empno numeric(4), ename varchar(15), job char(10) CONSTRAINT UN UNIQUE, Deptno numeric(8) CONSTRAINT Fkey2 REFERENCES DEPT(deptno));
+
+Table created.
+
+SQL> desc emp6;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ EMPNO                                              NUMBER(4)
+ ENAME                                              VARCHAR2(15)
+ JOB                                                CHAR(10)
+ DEPTNO                                             NUMBER(8)
+
+SQL> Create table student ( regno numeric(6),mark numeric(3) CHECK (mark >=0 and mark<=100));
+
+Table created.
+
+SQL> Insert into student (regno, mark) values(192101, 50);
+
+1 row created.
+
+
+
+SQL>
+SQL> Create table cust(custid numeric(6) NOT NULL, name char(10));
+
+Table created.
+
+SQL> insert into cust (custid, name) values (101, NULL);
+
+1 row created
+
+
+SQL> ALTER TABLE cust ADD UNIQUE(custid);
+
+Table altered.
+
+SQL> desc emp
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ ENO                                                NUMBER(8)
+ NAME                                               VARCHAR2(36)
+ SAL                                       NOT NULL NUMBER(7,2)
+
+SQL> CREATE TABLE stud(regno numeric(6) NOT NULL, name char(10), PRIMARY KEY(regno));
+
+Table created.
+
+SQL> desc emp
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ ENO                                                NUMBER(8)
+ NAME                                               VARCHAR2(36)
+ SAL                                       NOT NULL NUMBER(7,2)
+
+
+
+
+SP2-0734: unknown command beginning "SQL> selec..." - rest of line ignored.
+SQL>
+SQL>      EMPNO ENAME
+SP2-0734: unknown command beginning "EMPNO ENAM..." - rest of line ignored./
+SQL> ---------- -------------------------
+SQL>        101 rakshitha
+SQL>        101 siri
+SQL>
+SQL> SQL> CREATE table emp (EmpNo numeric(5), EName varchar(15), job char
+
+SQL> SQL>   2   CREATE table emp (EmpNo numeric(5), EName varchar(15), job char(10) CONSTRAINT un unique, DeptNo numeric(3) CONSTRAINT FKey2 REFERENCES DEPT(DeptNo));
+SP2-0734: unknown command beginning "SQL>   2  ..." - rest of line ignored.
+SQL> SQL>   2 Create table emp (EmpNo numeric(5), EName varchar(15), job char(10) CONSTRAINT un unique, DeptNo numeric(3) CONSTRAINT FKey2 REFERENCES DEPT(DeptNo));
+SP2-0734: unknown command beginning "SQL>   2 C..." - rest of line ignored.
+SQL> SQL>   2 create table emp (EmpNo numeric(5), EName varchar(15), job char(10) CONSTRAINT un unique, DeptNo numeric(3) CONSTRAINT FKey2 REFERENCES DEPT(DeptNo));
+SP2-0734: unknown command beginning "SQL>   2 c..." - rest of line ignored.
+SQL> SQL>
+SP2-0042: unknown command "SQL>" - rest of line ignored.
+SP2-0044: For a list of known commands enter HELP
+and to leave enter EXIT.
+SQL> SQL> create table emp (EmpNo numeric(5), EName varchar(15), job char(10) CONSTRAINT un unique, DeptNo numeric(3) CONSTRAINT FKey2 REFERENCES DEPT(DeptNo));
+SP2-0734: unknown command beginning "SQL> creat..." - rest of line ignored.
+SQL> create table emp (EmpNo numeric(5), EName varchar(15), job char(10) CONSTRAINT un unique, DeptNo numeric(3) CONSTRAINT FKey2 REFERENCES DEPT(DeptNo)
+  5
+SQL>
+SQL> SQL> create table emp1 (EmpNo numeric(5), EName varchar(15), job char(10) CONSTRAINT un unique, DeptNo numeric(3) CONS
+  3  ERROR at line 1:
+  4  ORA-00955: name is already used by an existing object
+  
+SQL>
+SQL> SQL>  Create table emp6 (empno numeric(4), ename varchar(15), job char(10) CONSTRAINT UN UNIQUE, Deptno numeric(8) CONSTRAINT Fkey2 REFERENCES DEPT(deptno));
+SP2-0734: unknown command beginning "SQL>  Crea..." - rest of line ignored.
+SQL>
+SQL> Table created.
+SP2-0734: unknown command beginning "Table crea..." - rest of line ignored.
+SQL>
+SQL> SQL> desc emp6;
+SP2-0734: unknown command beginning "SQL> desc ..." - rest of line ignored.
+SQL>  Name                                      Null?    Type
+SP2-0734: unknown command beginning "Name      ..." - rest of line ignored.
+SP2-0044: For a list of known commands enter HELP
+and to leave enter EXIT.
+SQL>  ----------------------------------------- -------- ----------------------------
+SQL>  EMPNO                                              NUMBER(4)
+SP2-0734: unknown command beginning "EMPNO     ..." - rest of line ignored.
+SQL>  ENAME                                              VARCHAR2(15)
+SP2-0734: unknown command beginning "ENAME     ..." - rest of line ignored.
+SQL>  JOB                                                CHAR(10)
+SP2-0734: unknown command beginning "JOB             ..." - rest of line ignored.
+SQL>  DEPTNO                                             NUMBER(8)
+SP2-0734: unknown command beginning "DEPTNO    ..." - rest of line ignored.
+SP2-0044: For a list of known commands enter HELP
+and to leave enter EXIT.
+SQL>
+SQL> SQL> Create table student ( regno numeric(6),mark numeric(3) CHECK (mark >=0 and mark<=100));
+SP2-0734: unknown command beginning "SQL> Creat..." - rest of line ignored.
+SQL>
+SQL> Table created.
+SP2-0734: unknown command beginning "Table crea..." - rest of line ignored.
+SQL>
+SQL> SQL> Insert into student (regno, mark) values(192101, 50);
+SP2-0734: unknown command beginning "SQL> Inser..." - rest of line ignored.
+SQL>
+SQL> 1 row created.
+SQL>
+SQL> SQL> CREATE TABLE cust(custid, name) values (101, NULL)
+SP2-0734: unknown command beginning "SQL> CREAT..." - rest of line ignored.
+SP2-0044: For a list of known commands enter HELP
+
+SQL>
+SQL> SQL>
+SP2-0042: unknown command "SQL>" - rest of line ignored.
+SQL> SQL> Create table cust(custid numeric(6) NOT NULL, name char(10));
+SP2-0734: unknown command beginning "SQL> Creat..." - rest of line ignored.
+SQL>
+SQL> Table created.
+SP2-0734: unknown command beginning "Table crea..." - rest of line ignored.
+SQL>
+SQL> SQL> insert into cust (custid, name) values (101, NULL);
+SP2-0734: unknown command beginning "SQL> inser..." - rest of line ignored.
+SP2-0044: For a list of known commands enter HELP
+and to leave enter EXIT.
+SQL>
+SQL> 1 row created.
+SQL>
+SQL> SQL> ALTER TABLE cust ADD UNIQUE(custid);
+SP2-0734: unknown command beginning "SQL> ALTER..." - rest of line ignored.
+SQL>
+SQL> Table altered.
+SP2-0734: unknown command beginning "Table alte..." - rest of line ignored.
+SQL>
+SQL> SQL> desc emp
+SP2-0734: unknown command beginning "SQL> desc ..." - rest of line ignored.
+SQL>  Name                                      Null?    Type
+SP2-0734: unknown command beginning "Name      ..." - rest of line ignored.
+SP2-0044: For a list of known commands enter HELP
+and to leave enter EXIT.
+SQL>  ----------------------------------------- -------- ----------------------------
+SQL>  ENO                                                NUMBER(8)
+SP2-0734: unknown command beginning "ENO             ..." - rest of line ignored.
+SQL>  NAME                                               VARCHAR2(36)
+SP2-0734: unknown command beginning "NAME      ..." - rest of line ignored.
+SQL>  SAL                                       NOT NULL NUMBER(7,2)
+SP2-0734: unknown command beginning "SAL             ..." - rest of line ignored.
+SQL>
+SQL> SQL> CREATE TABLE stud(regno numeric(6) NOT NULL, name char(10), PRIMARY KEY(regno));
+SP2-0734: unknown command beginning "SQL> CREAT..." - rest of line ignored.
+SP2-0044: For a list of known commands enter HELP
+and to leave enter EXIT.
+SQL>
+SQL> Table created.
+SP2-0734: unknown command beginning "Table crea..." - rest of line ignored.
+SQL>
+SQL> SQL> desc emp
+SP2-0734: unknown command beginning "SQL> desc ..." - rest of line ignored.
+SQL>  Name                                      Null?    Type
+SP2-0734: unknown command beginning "Name      ..." - rest of line ignored.
+SQL>  ----------------------------------------- -------- ----------------------------
+SQL>  ENO                                                NUMBER(8)
+SP2-0734: unknown command beginning "ENO             ..." - rest of line ignored.
+SQL>  NAME                                               VARCHAR2(36)
+SP2-0734: unknown command beginning "NAME      ..." - rest of line ignored.
+SQL>  SAL                                       NOT NULL NUMBER(7,2)
+SP2-0734: unknown command beginning "SAL             ..." - rest of line ignored.
+SQL>
+SQL> SQL> (custid numeric(6) NOT NULL UNIQUE, name char(10));
+SP2-0734: unknown command beginning "SQL> (cust..." - rest of line ignored.
+SP2-0044: For a list of known commands enter HELP
+and to leave enter EXIT.
