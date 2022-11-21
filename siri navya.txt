@@ -1,0 +1,663 @@
+SQL> create table dept5 (deptno numeric(3),deptname varchar2(10), deptloc varchar2(10));
+
+Table created.
+
+SQL> insert into dept5(deptno,deptname,deptloc)values(101,'inventory','delhi');
+
+1 row created.
+
+
+SQL>  insert into dept5 values (102,'sales','mumbai');
+
+1 row created.
+SQL>  insert into dept5 values(103,'sales','chennai');
+
+
+
+2. SQL>  create table employee3(empno numeric(4),ename varchar2(20),deptno numeric(2),sal numeric(35));
+
+Table created.
+
+SQL> insert into employee3 values(301,'siri',10,20000);
+
+1 row created.
+
+SQL> insert into employee3 values(302,'diya',70,50000);
+
+1 row created.
+
+SQL> insert into employee3 values(305,'nav',50,60000);
+
+1 row created.
+
+SQL> insert into employee3 values(306,'riya',30,40000);
+
+1 row created.
+
+SQL> select*from employee3;
+
+     EMPNO ENAME                    DEPTNO        SAL
+---------- -------------------- ---------- ----------
+       301 siri                         10      20000
+       302 diya                         70      50000
+       305 nav                          50      60000
+       306 riya                         30      40000
+
+
+5. SQL> create table employee as select*from employee3;
+
+Table created.
+
+SQL> select*from employee;
+
+     EMPNO ENAME                    DEPTNO        SAL
+---------- -------------------- ---------- ----------
+       301 siri                         10      20000
+       302 diya                         70      50000
+       305 nav                          50      60000
+       306 riya                         30      40000
+
+
+
+6.
+SQL> create table employee6(empno numeric(3),ename varchar2(20), deptno numeric(2),sal numeric(25),job varchar(30));
+
+Table created.
+
+
+SQL> insert into employee6 values(201,'sri',4,20000,'teacher');
+
+1 row created.
+
+SQL> insert into employee6 values(202,'naya',5,34000,'engineer');
+
+1 row created.
+
+SQL> insert into employee6 values(203,'waja',6,45000,'business');
+
+1 row created.
+
+SQL> select*from employee6;
+
+     EMPNO ENAME                    DEPTNO        SAL
+---------- -------------------- ---------- ----------
+JOB
+------------------------------
+       201 sri                           4      20000
+teacher
+
+       202 naya                          5      34000
+engineer
+
+       203 waja                          6      45000
+business
+
+
+SQL> select ename,job from employee6;
+
+ENAME                JOB
+-------------------- ------------------------------
+sri                  teacher
+naya                 engineer
+waja                 business
+
+
+
+7. SQL> delete employee6 where job='teacher';
+
+1 row deleted
+SQL> select*from employee6;
+
+     EMPNO ENAME                    DEPTNO        SAL
+---------- -------------------- ---------- ----------
+JOB
+------------------------------
+       202 naya                          5      34000
+engineer
+
+       203 waja                          6      45000
+business
+
+
+
+
+
+
+8. SQL> create table emp8(empno numeric(2),ename varchar(45),job varchar(24),deptno numeric(23),sal numeric(6));
+
+Table created.
+
+
+SQL> insert into employee6 values(204,'sara',30,45000,'lecturer');
+
+1 row created.
+
+SQL> select *from employee6 where deptno=30;
+
+     EMPNO ENAME                    DEPTNO        SAL
+---------- -------------------- ---------- ----------
+JOB
+------------------------------
+       204 sara                         30      45000
+lecturer
+
+
+7. SQL> delete employee6 where job='lecturer';
+
+1 row deleted.
+
+SQL> select*from employee6;
+
+     EMPNO ENAME                    DEPTNO        SAL
+---------- -------------------- ---------- ----------
+JOB
+------------------------------
+       202 naya                          5      34000
+engineer
+
+       203 waja                          6      45000
+business
+
+
+9. SQL> select distinct deptno from employee6;
+
+    DEPTNO
+----------
+         6
+         5
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+SQL> create table dept5 (deptno numeric(3),deptname varchar2(10), deptloc varchar2(10));
+
+Table created.
+
+SQL> insert into dept5(deptno,deptname,deptloc)values(101,'inventory','delhi');
+
+1 row created.
+
+SQL> insert into values (102,'sales','mumbai');
+insert into values (102,'sales','mumbai')
+            *
+ERROR at line 1:
+ORA-00903: invalid table name
+
+
+SQL>  insert into dept5 values (102,'sales','mumbai');
+
+1 row created.
+
+SQL> create table employee3(empno,numeric(4),ename varchar2(20),deptno numeric(2),sal numeric(4);
+create table employee3(empno,numeric(4),ename varchar2(20),deptno numeric(2),sal numeric(4)
+                                    *
+ERROR at line 1:
+ORA-00902: invalid datatype
+
+
+SQL> create table employee3(empno numeric(4),ename varchar2(20),deptno numeric(2),sal numeric(4);
+create table employee3(empno numeric(4),ename varchar2(20),deptno numeric(2),sal numeric(4)
+                                                                                          *
+ERROR at line 1:
+ORA-00907: missing right parenthesis
+
+
+SQL>  create table employee3(empno numeric(4),ename varchar2(20),deptno numeric(2),sal numeric(40));
+ create table employee3(empno numeric(4),ename varchar2(20),deptno numeric(2),sal numeric(40))
+                                                                                          *
+ERROR at line 1:
+ORA-01727: numeric precision specifier is out of range (1 to 38)
+
+
+SQL>  create table employee3(empno numeric(4),ename varchar2(20),deptno numeric(2),sal numeric(35));
+
+Table created.
+
+SQL> show databases;
+SP2-0158: unknown SHOW option "databases"
+SQL> show tables;
+SP2-0158: unknown SHOW option "tables"
+SQL> select*from employee3;
+
+no rows selected
+
+SQL> insert into employee3 values(301,'siri',10,20000);
+
+1 row created.
+
+SQL> insert into employee3 values(302,'diya',70,50000);
+
+1 row created.
+
+SQL> insert into employee3 values(305,'nav',50,60000);
+
+1 row created.
+
+SQL> insert into employee3 values(306,'riya',30,40000);
+
+1 row created.
+
+SQL> select*from employee3;
+
+     EMPNO ENAME                    DEPTNO        SAL
+---------- -------------------- ---------- ----------
+       301 siri                         10      20000
+       302 diya                         70      50000
+       305 nav                          50      60000
+       306 riya                         30      40000
+
+SQL> create table employee as select*from employee3;
+
+Table created.
+
+SQL> select*from employee;
+
+     EMPNO ENAME                    DEPTNO        SAL
+---------- -------------------- ---------- ----------
+       301 siri                         10      20000
+       302 diya                         70      50000
+       305 nav                          50      60000
+       306 riya                         30      40000
+
+SQL> select ename,job from employee3;
+select ename,job from employee3
+             *
+ERROR at line 1:
+ORA-00904: "JOB": invalid identifier
+
+
+SQL> select ename,job from table employee3;
+select ename,job from table employee3
+                            *
+ERROR at line 1:
+ORA-00906: missing left parenthesis
+
+
+SQL> update table employee3(empno num(4),ename varchar2(20),emp deptno num(2),sal num(20));
+update table employee3(empno num(4),ename varchar2(20),emp deptno num(2),sal num(20))
+       *
+ERROR at line 1:
+ORA-00903: invalid table name
+
+
+SQL> update table employee3(empno num(4),ename varchar2(20),emp deptno num(2),sal num(35));
+update table employee3(empno num(4),ename varchar2(20),emp deptno num(2),sal num(35))
+       *
+ERROR at line 1:
+ORA-00903: invalid table name
+
+
+SQL> update table employee(empno num(4),ename varchar2(20),emp deptno num(2),sal num(35));
+update table employee(empno num(4),ename varchar2(20),emp deptno num(2),sal num(35))
+       *
+ERROR at line 1:
+ORA-00903: invalid table name
+
+
+SQL> create table employee3(empno num(4),ename varchar2(20),emp deptno num(2),sal num(35),job varchar(20));
+create table employee3(empno num(4),ename varchar2(20),emp deptno num(2),sal num(35),job varchar(20))
+                                *
+ERROR at line 1:
+ORA-00907: missing right parenthesis
+
+
+SQL> create table employee3(empno num(4),ename varchar2(20),emp deptno num(2),sal num(35),job char(20));
+create table employee3(empno num(4),ename varchar2(20),emp deptno num(2),sal num(35),job char(20))
+                                *
+ERROR at line 1:
+ORA-00907: missing right parenthesis
+
+
+SQL> create table employee3(empno numeric(3),ename varchar2(20),emp deptno numeric(2),sal numeric(35),job char(20));
+create table employee3(empno numeric(3),ename varchar2(20),emp deptno numeric(2),sal numeric(35),job char(20))
+                                                                      *
+ERROR at line 1:
+ORA-00907: missing right parenthesis
+
+
+SQL> create table employee3(empno numeric(3),ename varchar2(20), deptno numeric(2),sal numeric(25),job varchar(30));
+create table employee3(empno numeric(3),ename varchar2(20), deptno numeric(2),sal numeric(25),job varchar(30))
+             *
+ERROR at line 1:
+ORA-00955: name is already used by an existing object
+
+
+SQL> create table employee6(empno numeric(3),ename varchar2(20), deptno numeric(2),sal numeric(25),job varchar(30));
+
+Table created.
+
+SQL> insert into employee6(201,'sri',4,20000,'teacher');
+insert into employee6(201,'sri',4,20000,'teacher')
+                      *
+ERROR at line 1:
+ORA-00928: missing SELECT keyword
+
+
+SQL> insert into employee6 values(201,'sri',4,20000,'teacher');
+
+1 row created.
+
+SQL> insert into employee6 values(202,'naya',5,34000,'engineer');
+
+1 row created.
+
+SQL> insert into employee6 values(203,'waja',6,45000,'business');
+
+1 row created.
+
+SQL> select*from employee6;
+
+     EMPNO ENAME                    DEPTNO        SAL
+---------- -------------------- ---------- ----------
+JOB
+------------------------------
+       201 sri                           4      20000
+teacher
+
+       202 naya                          5      34000
+engineer
+
+       203 waja                          6      45000
+business
+
+
+SQL> select ename,job from employee6;
+
+ENAME                JOB
+-------------------- ------------------------------
+sri                  teacher
+naya                 engineer
+waja                 business
+
+SQL> delete employee6 where job='teacher';
+
+1 row deleted.
+
+SQL> display employee6;
+SP2-0734: unknown command beginning "display em..." - rest of line ignored.
+SQL> select*from employee6;
+
+     EMPNO ENAME                    DEPTNO        SAL
+---------- -------------------- ---------- ----------
+JOB
+------------------------------
+       202 naya                          5      34000
+engineer
+
+       203 waja                          6      45000
+business
+
+
+SQL> update set employee6 where empno=202 and deptno=30;
+update set employee6 where empno=202 and deptno=30
+       *
+ERROR at line 1:
+ORA-00903: invalid table name
+
+
+SQL> update set employee6 where deptno=30;
+update set employee6 where deptno=30
+       *
+ERROR at line 1:
+ORA-00903: invalid table name
+
+
+SQL> update employee6 set deptno=30 where empno=201;
+
+0 rows updated.
+
+SQL> select *from employee6;
+
+     EMPNO ENAME                    DEPTNO        SAL
+---------- -------------------- ---------- ----------
+JOB
+------------------------------
+       202 naya                          5      34000
+engineer
+
+       203 waja                          6      45000
+business
+
+
+SQL> update employee6 set( deptno)=30 where empno=201;
+
+0 rows updated.
+
+SQL> update employee6 set( deptno)=30 where empno=201;
+
+0 rows updated.
+
+SQL> create table emp8(empno num(6),ename varchar(45),job varchar(24),deptno num(40),sal num(6));
+create table emp8(empno num(6),ename varchar(45),job varchar(24),deptno num(40),sal num(6))
+                           *
+ERROR at line 1:
+ORA-00907: missing right parenthesis
+
+
+SQL> create table emp8(empno num(6),ename varchar(45),job varchar(24),deptno numeric(23),sal numeric(6));
+create table emp8(empno num(6),ename varchar(45),job varchar(24),deptno numeric(23),sal numeric(6))
+                           *
+ERROR at line 1:
+ORA-00907: missing right parenthesis
+
+
+SQL> create table emp8(empno num(12),ename varchar(45),job varchar(24),deptno numeric(23),sal numeric(6));
+create table emp8(empno num(12),ename varchar(45),job varchar(24),deptno numeric(23),sal numeric(6))
+                           *
+ERROR at line 1:
+ORA-00907: missing right parenthesis
+
+
+SQL> create table emp8(empno numeric(2),ename varchar(45),job varchar(24),deptno numeric(23),sal numeric(6));
+
+Table created.
+
+SQL> update employee6 set(emp deptno)=30 where empno=201;
+update employee6 set(emp deptno)=30 where empno=201
+                         *
+ERROR at line 1:
+ORA-00907: missing right parenthesis
+
+
+SQL> update employee6 set emp deptno=30 where empno=201;
+update employee6 set emp deptno=30 where empno=201
+                         *
+ERROR at line 1:
+ORA-00927: missing equal sign
+
+
+SQL> update employee6 set deptno=30 where empno=201;
+
+0 rows updated.
+
+SQL> update employee6 set empno=201 where deptno=30;
+
+0 rows updated.
+
+SQL> select *from employee6;
+
+     EMPNO ENAME                    DEPTNO        SAL
+---------- -------------------- ---------- ----------
+JOB
+------------------------------
+       202 naya                          5      34000
+engineer
+
+       203 waja                          6      45000
+business
+
+
+SQL> insert into employee6 values(204,'sara',30,45000,'lecturer'));
+insert into employee6 values(204,'sara',30,45000,'lecturer'))
+                                                            *
+ERROR at line 1:
+ORA-00933: SQL command not properly ended
+
+
+SQL> insert into employee6 values(204,'sara',30,45000,'lecturer');
+
+1 row created.
+
+SQL> select *from employee6 where deptno=30;
+
+     EMPNO ENAME                    DEPTNO        SAL
+---------- -------------------- ---------- ----------
+JOB
+------------------------------
+       204 sara                         30      45000
+lecturer
+
+
+SQL> delete employee6 where job='lecturer';
+
+1 row deleted.
+
+SQL> select*from employee6;
+
+     EMPNO ENAME                    DEPTNO        SAL
+---------- -------------------- ---------- ----------
+JOB
+------------------------------
+       202 naya                          5      34000
+engineer
+
+       203 waja                          6      45000
+business
+
+
+SQL> select distinct deptno from employee6;
+
+    DEPTNO
+----------
+         6
+         5
+
+SQL>  create table employee3(empno numeric(4),ename varchar2(20),deptno numeric(2),sal numeric(4);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
